@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gerermesaffaires-events"
+description = "Pythonic adapter for GererMesAffaires events"
+version = "0.1.0"
+authors = [
+    {name = "Julien Benac", email = "contact@julienbenac.fr"},
+]
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE.md"]
+requires-python = ">=3.13"
+dependencies = [
+    "pyee>=13.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.37.0",
+    "pre-commit>=4.3.0",
+    "pyright>=1.1.405",
+    "ruff>=0.13.0",
+]
+
+[tool.poe]
+include = "poe.yaml"
