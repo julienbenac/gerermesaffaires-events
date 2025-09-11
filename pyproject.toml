@@ -15,6 +15,7 @@ license-files = ["LICENSE.md"]
 requires-python = ">=3.13"
 dependencies = [
     "pyee>=13.0.0",
+    "starlette>=0.47.3",
 ]
 
 [dependency-groups]
