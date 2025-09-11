@@ -6,7 +6,7 @@ from starlette.responses import Response
 from starlette.routing import Route
 
 from .core.exceptions import GererMesAffairesError
-from .core.protocols import EventEmitterProtocol, ServerProtocol
+from .core.protocols import EventEmitterProtocol
 
 
 class Server(Starlette):
@@ -24,7 +24,7 @@ class Server(Starlette):
         self._emitter = emitter
 
     @property
-    def app(self) -> ServerProtocol:
+    def app(self) -> "Server":
         """Get the server application instance."""
         return self
 

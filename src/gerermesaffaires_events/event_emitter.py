@@ -1,6 +1,5 @@
 from pyee.base import EventEmitter as BaseEventEmitter
 
-from .core.protocols import ServerProtocol
 from .server import Server
 
 
@@ -24,7 +23,7 @@ class EventEmitter(BaseEventEmitter):
         self._server = Server(signature, endpoint, self)
 
     @property
-    def app(self) -> ServerProtocol:
+    def app(self) -> Server:
         """Get the ASGI application for webhook handling.
 
         Example:
