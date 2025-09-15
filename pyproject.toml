@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "gerermesaffaires-events"
 description = "Pythonic adapter for GererMesAffaires events"
-version = "0.1.0"
+version = "1.0.0"
 authors = [
     {name = "Julien Benac", email = "contact@julienbenac.fr"},
 ]
