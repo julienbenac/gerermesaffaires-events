@@ -33,6 +33,9 @@ dependencies = [
     "starlette>=0.47.3",
 ]
 
+[project.urls]
+Homepage = "https://github.com/julienbenac/gerermesaffaires-events"
+
 [dependency-groups]
 dev = [
     "poethepoet>=0.37.0",
