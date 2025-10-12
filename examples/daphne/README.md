@@ -34,24 +34,12 @@ To use Daphne programmatically, first install it in your environment. This step 
 uv add daphne
 ```
 
-The following Python code demonstrates how to set up an event emitter, register event handlers, and launch the ASGI application using Daphne. This approach gives you more control and flexibility for integrating event-driven logic into your application.
+The [`main.py`](./main.py) file contains the event emitter setup and event handlers. The following Python code demonstrates how to launch the ASGI application using Daphne programmatically. This approach gives you more control and flexibility for integrating event-driven logic into your application.
 
 ```python
 # examples/daphne/test.py
 
 from daphne.cli import CommandLineInterface
-from gerermesaffaires_events import EventEmitter
-
-emitter = EventEmitter(signature="secret")
-app = emitter.app
-
-@emitter.on("ping")
-def handle_ping(data):
-    print(f"Received ping event: {data}")
-
-@emitter.on("error")
-def handle_error(data):
-    print(f"Received error event: {data}")
 
 if __name__ == "__main__":
     cli = CommandLineInterface()
