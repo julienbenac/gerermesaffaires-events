@@ -23,7 +23,7 @@ Below you will find practical examples to help you get started with Daphne and t
 You can run the event server directly from the command line using Daphne. This is useful for quick testing or deployment without writing additional code.
 
 ```bash
-uv run --with daphne daphne main:emitter.app -b 127.0.0.1 -p 8002
+uv run --with daphne daphne main:app -b 127.0.0.1 -p 8002
 ```
 
 #### Programmatic usage
@@ -43,6 +43,7 @@ from daphne.cli import CommandLineInterface
 from gerermesaffaires_events import EventEmitter
 
 emitter = EventEmitter(signature="secret")
+app = emitter.app
 
 @emitter.on("ping")
 def handle_ping(data):
@@ -54,7 +55,7 @@ def handle_error(data):
 
 if __name__ == "__main__":
     cli = CommandLineInterface()
-    cli.run(["main:emitter.app", "-b", "127.0.0.1", "-p", "8002"])
+    cli.run(["main:app", "-b", "127.0.0.1", "-p", "8002"])
 ```
 
 Once your script is ready, you can start the server using the following command. This will launch your event server and make it accessible for handling events.

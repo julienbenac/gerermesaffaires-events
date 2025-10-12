@@ -1,6 +1,7 @@
 from gerermesaffaires_events import EventEmitter
 
 emitter = EventEmitter(signature="secret")
+app = emitter.app
 
 
 @emitter.on("ping")

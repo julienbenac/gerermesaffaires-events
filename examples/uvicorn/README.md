@@ -23,7 +23,7 @@ Below you will find practical examples to help you get started with Uvicorn and 
 You can run the event server directly from the command line using Uvicorn. This is useful for quick testing or deployment without writing additional code.
 
 ```bash
-uv run --with uvicorn uvicorn main:emitter.app --host 127.0.0.1 --port 8001
+uv run --with uvicorn uvicorn main:app --host 127.0.0.1 --port 8001
 ```
 
 #### Programmatic usage
@@ -43,6 +43,7 @@ import uvicorn
 from gerermesaffaires_events import EventEmitter
 
 emitter = EventEmitter(signature="secret")
+app = emitter.app
 
 @emitter.on("ping")
 def handle_ping(data):
@@ -53,7 +54,7 @@ def handle_error(data):
     print(f"Received error event: {data}")
 
 if __name__ == "__main__":
-    uvicorn.run(emitter.app, host="127.0.0.1", port=8001)
+    uvicorn.run(app, host="127.0.0.1", port=8001)
 ```
 
 Once your script is ready, you can start the server using the following command. This will launch your event server and make it accessible for handling events.

@@ -32,7 +32,10 @@ class EventEmitter(BaseEventEmitter):
         import uvicorn
 
         emitter = EventEmitter("secret", "/gerermesaffaires/events")
-        uvicorn.run(emitter.app, host="127.0.0.1", port=8000)
+        app = emitter.app
+
+        if __name__ == "__main__":
+            uvicorn.run(app, host="127.0.0.1", port=8000)
         ```
         """
         return self._server.app
